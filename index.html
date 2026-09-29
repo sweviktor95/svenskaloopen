@@ -39,6 +39,7 @@
   a{color:inherit;}
   .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
   img,svg{display:block; max-width:100%;}
+  @media (max-width:480px){ .wrap{padding:0 18px;} }
 
   /* ---------- NAV ---------- */
   nav{
@@ -59,18 +60,6 @@
 
   .nav-right{display:flex; align-items:center; gap:12px;}
 
-  .view-toggle{
-    display:flex; background:var(--paper-dim); border:1px solid var(--line);
-    border-radius:20px; padding:3px;
-  }
-  .toggle-btn{
-    border:none; background:transparent; cursor:pointer;
-    font-family:'Inter', sans-serif; font-size:0.86rem; font-weight:500;
-    padding:7px 18px; border-radius:16px; color:#5a6472;
-    white-space:nowrap;
-  }
-  .toggle-btn.active{background:var(--ink); color:var(--white);}
-
   .lang-toggle{display:flex; gap:4px; border:1px solid var(--line); border-radius:20px; padding:3px;}
   .lang-btn{
     border:none; background:transparent; cursor:pointer;
@@ -81,27 +70,30 @@
   .lang-btn svg{width:20px; height:14px; border-radius:2px; display:block;}
   .lang-btn.active{background:var(--paper-dim); box-shadow:0 0 0 1.5px var(--ink) inset;}
 
+  @media (max-width:640px){
+    nav .wrap{height:auto; padding:10px 16px; flex-wrap:wrap; row-gap:8px;}
+    .brand{font-size:1rem; gap:6px;}
+    .brand-text{display:none;}
+    .nav-right{width:100%; justify-content:space-between; gap:8px;}
+    .lang-btn{width:26px; height:24px;}
+  }
+
   /* ---------- HERO ---------- */
   header.hero{
     position:relative;
     padding:88px 0 70px;
     overflow:hidden;
   }
-  #view-deltagare header.hero{
+  header.hero{
     background:radial-gradient(ellipse 900px 500px at 82% -10%, rgba(47,107,109,0.14), transparent 60%);
-  }
-  #view-klubbar header.hero{
-    background:radial-gradient(ellipse 900px 500px at 82% -10%, rgba(168,124,63,0.10), transparent 60%);
   }
   .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:start;}
   @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
 
   .eyebrow-note{color:var(--sea-deep); font-size:0.95rem; margin-bottom:18px; max-width:36ch;}
-  #view-klubbar .eyebrow-note{color:var(--brass);}
   .eyebrow-note a{cursor:pointer; text-decoration:underline;}
   h1.hero-title{font-size:clamp(2.4rem, 5.6vw, 4rem); color:var(--ink); margin-bottom:22px;}
   h1.hero-title em{font-style:italic; color:var(--sea);}
-  #view-klubbar h1.hero-title em{color:var(--brass);}
   .hero-sub{font-size:1.1rem; max-width:48ch; color:#3c4655; margin-bottom:34px;}
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px;}
   .btn-primary{
@@ -116,7 +108,7 @@
     text-decoration:none; font-size:0.97rem;
     display:inline-block;
   }
-  .hero-stats{display:flex; gap:36px; padding-top:28px; border-top:1px solid var(--line); max-width:520px;}
+  .hero-stats{display:flex; gap:36px; padding-top:28px; border-top:1px solid var(--line); max-width:520px; flex-wrap:wrap; row-gap:14px;}
   .hero-stats div strong{display:block; font-family:'Roboto Slab', serif; font-size:1.6rem; font-weight:500; color:var(--sea-deep);}
   .hero-stats div span{font-size:0.85rem; color:#5a6472;}
 
@@ -125,6 +117,7 @@
   .flag-stack img{width:78%; height:auto; display:block;}
   .flag-stack .f-guld{width:78%; margin-right:0;}
   .flag-stack .f-navy{width:78%; margin-right:0;}
+  @media (max-width:640px){ .flag-stack{max-width:280px; margin:0 auto;} }
 
   /* ---------- SECTION LABEL ---------- */
   .section-head{
@@ -135,6 +128,7 @@
   .section-head p{max-width:36ch; color:#4a5462; font-size:0.98rem;}
 
   section{padding:88px 0;}
+  @media (max-width:640px){ section{padding:56px 0;} header.hero{padding:56px 0 44px;} }
   section.alt{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 
   /* ---------- ETAPPER ---------- */
@@ -170,6 +164,7 @@
   /* ---------- NIVÅER ---------- */
   .tiers{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
   @media (max-width:860px){ .tiers{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .tiers{grid-template-columns:1fr;} }
   .tier{background:var(--white); padding:34px 26px; display:flex; flex-direction:column; gap:14px;}
   .tier .swatch{width:38px; height:50px; border-radius:1px 6px 6px 1px; position:relative;}
   .tier .swatch::after{
@@ -203,6 +198,8 @@
   /* ---------- KLUBBSIDA: GER / BER ---------- */
   .split{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
   @media (max-width:780px){ .split{grid-template-columns:1fr;} }
+  .split-3{grid-template-columns:repeat(3,1fr); margin-bottom:56px;}
+  @media (max-width:780px){ .split-3{grid-template-columns:1fr;} }
   .split-col{background:var(--white); padding:40px 36px;}
   .split-col h3{font-size:1.35rem; margin-bottom:22px;}
   .split-col.gives h3{color:var(--sea-deep);}
@@ -211,19 +208,6 @@
   .split-col li{font-size:0.97rem; color:#3c4655; padding-left:22px; position:relative;}
   .split-col.gives li::before{content:''; position:absolute; left:0; top:8px; width:8px; height:8px; border-radius:50%; background:var(--sea);}
   .split-col.asks li::before{content:''; position:absolute; left:0; top:8px; width:8px; height:8px; border-radius:50%; background:var(--brass);}
-
-  .flow{display:flex; align-items:stretch; gap:0; border:1px solid var(--line); border-radius:4px; overflow:hidden;}
-  @media (max-width:780px){ .flow{flex-direction:column;} }
-  .flow-step{flex:1; padding:30px 26px; background:var(--white); display:flex; flex-direction:column; gap:8px; border-right:1px solid var(--line);}
-  .flow-step:last-child{border-right:none; background:var(--paper-dim);}
-  .flow-step .amt{font-family:'Roboto Slab', serif; font-size:1.6rem; color:var(--sea-deep);}
-  .flow-step .lbl{font-size:0.85rem; color:#5a6472;}
-
-  .faq{display:flex; flex-direction:column; gap:0;}
-  .faq-item{border-bottom:1px solid var(--line); padding:26px 0;}
-  .faq-item:first-child{border-top:1px solid var(--line);}
-  .faq-item h3{font-size:1.1rem; margin-bottom:10px; font-family:'Inter', sans-serif; font-weight:600;}
-  .faq-item p{color:#4a5462; font-size:0.96rem; max-width:64ch;}
 
   /* ---------- CTA ---------- */
   .cta-band{
@@ -254,13 +238,9 @@
         <path d="M4 18 Q8 14 12 18 Q16 22 20 18" stroke="#2f6b6d" stroke-width="1.6" fill="none"/>
         <circle cx="12" cy="7" r="3.4" stroke="#a97c3f" stroke-width="1.6" fill="none"/>
       </svg>
-      Svenska Loopen
+      <span class="brand-text">Svenska Loopen</span>
     </div>
     <div class="nav-right">
-      <div class="view-toggle" role="tablist">
-        <button class="toggle-btn active" data-view="deltagare" type="button" id="nav-btn-deltagare">För deltagare</button>
-        <button class="toggle-btn" data-view="klubbar" type="button" id="nav-btn-klubbar">För båtklubbar</button>
-      </div>
       <div class="lang-toggle" role="tablist" aria-label="Language">
         <button class="lang-btn active" data-lang="sv" type="button" aria-label="Svenska" title="Svenska">
           <svg viewBox="0 0 20 14"><rect width="20" height="14" fill="#006aa7"/><rect x="7" y="0" width="3" height="14" fill="#fecc02"/><rect x="0" y="5.5" width="20" height="3" fill="#fecc02"/></svg>
@@ -273,9 +253,6 @@
   </div>
 </nav>
 
-<!-- ================= DELTAGARE ================= -->
-<div id="view-deltagare">
-
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
@@ -286,7 +263,7 @@
         <a class="btn-ghost" href="#rutten" id="d-cta2">Se de sex etapperna</a>
       </div>
       <div class="hero-stats">
-        <div><strong>2 000 nm</strong><span id="d-stat1">hela rundan, kust och kanal</span></div>
+        <div><strong>1 300 nm</strong><span id="d-stat1">hela rundan, kust och kanal</span></div>
         <div><strong>6</strong><span id="d-stat2">fristående etapper</span></div>
       </div>
     </div>
@@ -308,7 +285,7 @@
     <div class="etapp-line">
       <div class="etapp" data-seg="1">
         <div class="etapp-name">Norrlandskusten</div>
-        <div class="etapp-meta">Haparanda → Gävle · ca 700 nm</div>
+        <div class="etapp-meta">Haparanda → Gävle · ca 400 nm</div>
         <p class="etapp-desc" id="etapp1-desc">Hela Norrlandskusten, Höga kusten och den norra skärgården. Den mest ensliga och vidsträckta biten av rundan.</p>
       </div>
       <div class="etapp" data-seg="2">
@@ -389,7 +366,6 @@
         <ul>
           <li id="niv2-li1">Mässingsmärke</li>
           <li id="niv2-li2">Klistermärke</li>
-          <li id="niv2-li3">Flagga till din klubb</li>
         </ul>
       </div>
       <div class="tier">
@@ -424,7 +400,7 @@
       <h2 id="priser-h2">Priser & topplistor</h2>
       <p id="priser-p">Vid säsongens slut delas överskottet och den internationella potten ut på tre sätt.</p>
     </div>
-    <div class="split" style="grid-template-columns:repeat(3,1fr); margin-bottom:56px;">
+    <div class="split split-3">
       <div class="split-col gives">
         <h3 id="pris1-h3">Klubbpris</h3>
         <p id="pris1-p" style="color:#3c4655; font-size:0.95rem; margin-bottom:14px;">Klubben vars bästa medlem åkt längst eller klarat flest etapper under säsongen. Medlemmen får ett sponsrat presentkort — klubben får redan sin andel av potten.</p>
@@ -468,9 +444,9 @@
 <section id="klubb">
   <div class="wrap club-band">
     <div class="club-copy">
-      <h2 style="font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:22px;" id="klubb-h2">Din klubb seglar med</h2>
-      <p id="klubb-p1">Varje flagga har en liten ruta reserverad för din hemmaklubbs märke. Är din klubb ansluten syns den på flaggan du bär — och en egen flagga skickas till klubbstugan varje gång en medlem klarar en etapp.</p>
-      <p id="klubb-p2">Medlemskap i en ansluten båtklubb krävs för att gå med. Är du inte redan med i någon löser vi ett års medlemskap i en klubb du väljer, som en del av anmälan.</p>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:22px;" id="klubb-h2">En vimpel att skänka till klubben</h2>
+      <p id="klubb-p1">När du klarat en etapp — eller hela loopen — kan du välja att beställa en extra vimpel att ge till din egen båtklubb. Helt frivilligt, och ett rent tillval utanför grundavgiften.</p>
+      <p id="klubb-p2">Klubben behöver inte göra något alls för att det ska funka — inget avtal, ingen logga att godkänna, inget medlemskrav. Du bestämmer själv om, och till vilken klubb.</p>
     </div>
     <div class="flag-demo">
       <svg viewBox="0 0 220 140" fill="none">
@@ -478,10 +454,9 @@
         <path d="M4 4 L4 136 L 40 70 Z" fill="#f6f2e9"/>
         <circle cx="130" cy="52" r="3" stroke="#1a2332" stroke-width="1.4" fill="none"/>
         <path d="M75 90 Q110 78 150 92" stroke="#1a2332" stroke-width="1.4" fill="none" stroke-dasharray="1 5"/>
-        <rect x="160" y="98" width="40" height="26" fill="#fffdf8" stroke="#1a2332" stroke-width="1.2"/>
-        <text x="164" y="115" font-family="Inter" font-size="8" fill="#5a6472" id="klubb-svg-txt">klubbmärke</text>
+        <text x="80" y="118" font-family="Inter" font-size="8" fill="#5a6472" id="klubb-svg-txt">valfritt tillköp</text>
       </svg>
-      <p class="flag-caption" id="klubb-caption">Guld-flaggan — med reserverad yta för klubbmärket i nedre högra hörnet.</p>
+      <p class="flag-caption" id="klubb-caption">Samma vimpel som din egen — beställd separat, till klubbstugan.</p>
     </div>
   </div>
 </section>
@@ -499,198 +474,23 @@
   <div class="wrap">
     <div>
       <div class="brand">Svenska Loopen</div>
-      <p id="d-footer-p">Ideellt initiativ i samarbete med anslutna båtklubbar längs rutten. Avgifter täcker material, frakt och en andel till din hemmaklubb — inget mer.</p>
+      <p id="d-footer-p">Ideellt initiativ, helt fristående från båtklubbar och förbund. Avgifter täcker bara material, frakt och systemkostnader — inget mer.</p>
     </div>
     <nav class="foot-links">
       <ul>
         <li><a href="#rutten" id="d-foot1">Rutten</a></li>
         <li><a href="#nivaer" id="d-foot2">Nivåer</a></li>
-        <li><a href="#klubb" id="d-foot3">Klubbar</a></li>
+        <li><a href="#klubb" id="d-foot3">Klubbvimplar</a></li>
         <li><a href="#priser" id="d-foot5">Priser</a></li>
-        <li><a data-view="klubbar" id="d-foot4">För båtklubbar</a></li>
       </ul>
     </nav>
   </div>
 </footer>
 
-</div>
-
-<!-- ================= KLUBBAR ================= -->
-<div id="view-klubbar" style="display:none;">
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow-note" id="k-eyebrow">För styrelser och funktionärer i båtklubbar längs rutten. <a data-view="deltagare">Är du deltagare istället?</a></p>
-      <h1 class="hero-title" id="k-title">Era medlemmar gör resan. <em>Ni får den att synas.</em></h1>
-      <p class="hero-sub" id="k-sub">Svenska Loopen är en rutt runt hela landet som medlemmar i anslutna klubbar kan avverka etapp för etapp. Här är exakt vad det innebär att ansluta sin klubb — vad ni får, och vad vi ber om i gengäld.</p>
-      <div class="hero-ctas">
-        <a class="btn-primary" href="#anslut" id="k-cta1">Anslut klubben</a>
-        <a class="btn-ghost" href="#ger" id="k-cta2">Se vad det ger klubben</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>0 kr</strong><span id="k-stat1">kostnad för klubben att ansluta</span></div>
-        <div><strong>%</strong><span id="k-stat2">av etappavgiften går till medlemmens klubb</span></div>
-        <div><strong>1</strong><span id="k-stat3">kontaktperson, inget löpande arbete</span></div>
-      </div>
-    </div>
-    <div class="route-art">
-      <svg viewBox="0 0 320 420" fill="none">
-        <rect x="40" y="40" width="240" height="150" fill="none" stroke="#e3e1db" stroke-width="1.5"/>
-        <rect x="40" y="40" width="240" height="150" fill="#f4f4f2"/>
-        <path d="M60 150 Q120 100 180 130 Q230 155 260 110" stroke="#2f6b6d" stroke-width="2" fill="none"/>
-        <circle cx="60" cy="150" r="4" fill="#bd5432"/>
-        <circle cx="260" cy="110" r="4" fill="#bd5432"/>
-        <rect x="150" y="230" width="120" height="150" fill="#e8c473" stroke="#1a2332" stroke-width="1.5"/>
-        <path d="M150 230 L150 380 L 172 305 Z" fill="#ffffff"/>
-        <rect x="205" y="335" width="30" height="22" fill="#ffffff" stroke="#1a2332" stroke-width="1"/>
-        <text x="207" y="349" font-family="Inter" font-size="6.5" fill="#5a6472" id="k-svg-club">klubb</text>
-        <text x="170" y="270" font-family="Roboto Slab" font-size="14" fill="#1a2332" id="k-svg-guld">Guld</text>
-      </svg>
-    </div>
-  </div>
-</header>
-
-<section id="ger">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="ger-h2">Vad ni får och vad vi ber om</h2>
-      <p id="ger-p">Kort sagt: synlighet och en liten intäkt mot att ni godkänner er logga och utser en kontakt.</p>
-    </div>
-    <div class="split">
-      <div class="split-col gives">
-        <h3 id="ger-gives-h3">Vad klubben får</h3>
-        <ul>
-          <li id="ger-gives-li1">En andel av etappavgiften varje gång en av era medlemmar avklarar en etapp — pengarna går direkt till er klubb, inte till en gemensam pott.</li>
-          <li id="ger-gives-li2">En fysisk flagga till klubbstugan vid varje avklarad etapp, med medlemmens namn och årtal — en synlig, växande vägg av era medlemmars bedrifter.</li>
-          <li id="ger-gives-li3">Ert klubbmärke på flaggan varje medlem bär till sjöss — synlighet i andra hamnar längs hela rutten.</li>
-          <li id="ger-gives-li4">Ett konkret, återkommande skäl att engagera medlemmar utöver den vanliga klubbverksamheten — och gratis PR-material för sociala medier och lokalpress.</li>
-        </ul>
-      </div>
-      <div class="split-col asks">
-        <h3 id="ger-asks-h3">Vad vi ber om</h3>
-        <ul>
-          <li id="ger-asks-li1">Godkännande att trycka er klubblogga på flaggor och märken era medlemmar tjänar in.</li>
-          <li id="ger-asks-li2">En kontaktperson i styrelsen för praktiska frågor — logga, adress för klubbflaggan, eventuella medlemsfrågor.</li>
-          <li id="ger-asks-li3">Att medlemskap i er klubb räknas som giltigt för den som anmäler sig till Loopen och uppger er som hemmaklubb.</li>
-          <li id="ger-asks-li4">Inget ekonomiskt åtagande, inget administrativt arbete utöver detta — vi sköter tryck, frakt och utskick.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="intakt">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="intakt-h2">Så fördelas en etappavgift</h2>
-      <p id="intakt-p">Vi tar inte ut vinst — avgiften täcker material, frakt och systemkostnad, plus er andel.</p>
-    </div>
-    <div class="flow">
-      <div class="flow-step">
-        <div class="amt" id="flow1-amt">Material</div>
-        <div class="lbl" id="flow1-lbl">Mässingsmärke, klistermärke, klubbflagga — tillverkning</div>
-      </div>
-      <div class="flow-step">
-        <div class="amt" id="flow2-amt">Frakt</div>
-        <div class="lbl" id="flow2-lbl">Till medlemmen och till klubbstugan</div>
-      </div>
-      <div class="flow-step">
-        <div class="amt" id="flow3-amt">System</div>
-        <div class="lbl" id="flow3-lbl">Registrering, verifiering, drift av sajten</div>
-      </div>
-      <div class="flow-step">
-        <div class="amt" id="flow4-amt">Er andel</div>
-        <div class="lbl" id="flow4-lbl">Går direkt till medlemmens hemmaklubb</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ber">
-  <div class="wrap club-band">
-    <div class="flag-demo">
-      <svg viewBox="0 0 220 140" fill="none">
-        <rect x="4" y="4" width="212" height="132" fill="#e8c473" stroke="#1a2332" stroke-width="1.5"/>
-        <path d="M4 4 L4 136 L 40 70 Z" fill="#ffffff"/>
-        <text x="60" y="40" font-family="Roboto Slab" font-size="16" fill="#1a2332">Anna S.</text>
-        <text x="60" y="58" font-family="Inter" font-size="10" fill="#5a6472">Norrlandskusten · 2027</text>
-        <rect x="160" y="98" width="42" height="26" fill="#ffffff" stroke="#1a2332" stroke-width="1.2"/>
-        <text x="165" y="115" font-family="Inter" font-size="8" fill="#5a6472" id="ber-svg-txt">er logga</text>
-      </svg>
-      <p class="flag-caption" id="ber-caption">Klubbflaggan som hamnar i klubbstugan — en per medlem, per avklarad etapp.</p>
-    </div>
-    <div class="club-copy">
-      <h2 style="font-size:clamp(1.8rem,3.4vw,2.4rem); margin-bottom:22px;" id="ber-h2">En vägg som växer av sig själv</h2>
-      <p id="ber-p1">Varje gång en medlem klarar en etapp skickar vi en flagga till klubben — inte bara till medlemmen. Över tid blir det en samling som berättar klubbens egen del av historien, utan att ni behövt göra något mer än att säga ja från början.</p>
-      <p id="ber-p2">Det är samma princip som får nya medlemmar att fråga vad väggen betyder, och får befintliga medlemmar att vilja lägga till sin egen flagga bredvid grannens.</p>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="faq-h2">Vanliga frågor</h2>
-      <p></p>
-    </div>
-    <div class="faq">
-      <div class="faq-item">
-        <h3 id="faq1-q">Kostar det något att ansluta klubben?</h3>
-        <p id="faq1-a">Nej. Anslutning är kostnadsfri. Allt material finansieras av deltagarnas egna avgifter, inte av klubben.</p>
-      </div>
-      <div class="faq-item">
-        <h3 id="faq2-q">Måste klubben ligga längs rutten?</h3>
-        <p id="faq2-a">Nej, vilken SBU-ansluten klubb som helst i landet kan vara en medlems hemmaklubb, oavsett var ni har er hamn.</p>
-      </div>
-      <div class="faq-item">
-        <h3 id="faq3-q">Vad händer om en medlem inte redan är med i en klubb?</h3>
-        <p id="faq3-a">Den som anmäler sig utan klubbmedlemskap löser ett års medlemskap i en klubb de själva väljer, som en del av anmälan — ni kan alltså få nya medlemmar den vägen också.</p>
-      </div>
-      <div class="faq-item">
-        <h3 id="faq4-q">Hur verifieras att en etapp faktiskt är avklarad?</h3>
-        <p id="faq4-a">Via loggbok, GPS-spår eller foton vid utsedda kontrollpunkter — samma system oavsett vilken klubb medlemmen representerar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="anslut">
-  <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h2 id="anslut-h2">Redo att ansluta klubben?</h2>
-        <p id="anslut-p">Vi hör av oss med ett enkelt avtal och ber om er logga — resten sköter vi.</p>
-      </div>
-      <a class="btn-primary" href="#" id="anslut-btn">Kontakta oss om anslutning</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <div class="brand">Svenska Loopen</div>
-      <p id="k-footer-p">Ideellt initiativ i samarbete med anslutna båtklubbar längs rutten. Avgifter täcker material, frakt och en andel till din hemmaklubb — inget mer.</p>
-    </div>
-    <nav class="foot-links">
-      <ul>
-        <li><a href="#ger" id="k-foot1">Vad ni får</a></li>
-        <li><a href="#ber" id="k-foot2">Vad vi ber om</a></li>
-        <li><a data-view="deltagare" id="k-foot3">För deltagare</a></li>
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-</div>
 
 <script>
 var translations = {
   en: {
-    'nav-btn-deltagare': 'For participants',
-    'nav-btn-klubbar': 'For boat clubs',
-    'd-eyebrow': 'A route for those who\u2019ve already done the G\u00f6ta Canal once and are ready for more. <a data-view="klubbar">Represent a boat club?</a>',
     'd-title': 'Around Sweden, <em>by boat.</em>',
     'd-sub': 'From Haparanda in the north to Trelleborg in the south, from Gothenburg in the west to S\u00f6derk\u00f6ping in the east. Explore our six legs that take you around and through Sweden by boat.',
     'd-cta1': 'Sign up \u2014 get your flag',
@@ -711,20 +511,20 @@ var translations = {
     'niv-p': 'From signing up to completing the whole loop in one go.',
     'niv1-req': 'On sign-up', 'niv1-h3': 'White', 'niv1-p': 'You\u2019re in. Signals the journey has started, even before the first leg is done.',
     'niv2-req': 'Per leg', 'niv2-h3': 'Bronze', 'niv2-p': 'One badge per completed leg. Six to collect, in any order.',
-    'niv2-li1': 'Brass badge', 'niv2-li2': 'Sticker', 'niv2-li3': 'A flag for your club',
+    'niv2-li1': 'Brass badge', 'niv2-li2': 'Sticker',
     'niv3-req': 'All six complete', 'niv3-h3': 'Gold', 'niv3-p': 'The whole loop completed, however long it took. No time limit.',
     'niv3-li1': 'Flag', 'niv3-li2': 'Medal', 'niv3-li3': 'Sticker',
     'niv4-req': 'One unbroken summer', 'niv4-h3': 'Platinum', 'niv4-p': 'The whole loop between ice-out and ice-in. The limit is set by the canal\u2019s season, not by us.',
     'niv4-li1': 'Flag with a serial number', 'niv4-li2': 'Medal', 'niv4-li3': 'Sticker',
-    'klubb-h2': 'Your club sails with you',
-    'klubb-p1': 'Every flag has a small box reserved for your home club\u2019s badge. If your club is affiliated it appears on the flag you carry \u2014 and a flag of its own is sent to the clubhouse each time a member completes a leg.',
-    'klubb-p2': 'Membership in an affiliated boat club is required to join. If you\u2019re not already a member, we\u2019ll sort a year\u2019s membership in a club of your choice as part of signing up.',
-    'klubb-svg-txt': 'club badge',
-    'klubb-caption': 'The Gold flag \u2014 with space reserved for the club badge in the bottom right corner.',
+    'klubb-h2': 'A flag for your club, too',
+    'klubb-p1': 'Once you\u2019ve completed a leg \u2014 or the whole loop \u2014 you can choose to order an extra flag to give to your own boat club. Entirely optional, and a plain add-on outside the base fee.',
+    'klubb-p2': 'The club doesn\u2019t need to do anything for it to work \u2014 no agreement, no logo to approve, no membership requirement. It\u2019s entirely up to you whether, and to which club.',
+    'klubb-svg-txt': 'optional add-on',
+    'klubb-caption': 'The same flag you get yourself \u2014 ordered separately, for the clubhouse.',
     'anmal-h2': 'Ready for the first leg?',
     'anmal-btn': 'Sign up for Svenska Loopen',
-    'd-footer-p': 'A non-profit initiative in partnership with affiliated boat clubs along the route. Fees cover materials, shipping and a share to your home club \u2014 nothing more.',
-    'd-foot1': 'Route', 'd-foot2': 'Levels', 'd-foot3': 'Clubs', 'd-foot4': 'For boat clubs', 'd-foot5': 'Prizes',
+    'd-footer-p': 'A non-profit initiative, fully independent of boat clubs and associations. Fees cover only materials, shipping and system costs \u2014 nothing more.',
+    'd-foot1': 'Route', 'd-foot2': 'Levels', 'd-foot3': 'Club pennants', 'd-foot5': 'Prizes',
     'priser-h2': 'Prizes & leaderboards',
     'priser-p': 'At the end of the season the surplus and the international pool are shared out in three ways.',
     'pris1-h3': 'Club prize',
@@ -741,52 +541,6 @@ var translations = {
     'lb-example-note-2': 'Example data \u2014 filled with real results once the season is under way.',
     'lb-p1': '6/6 legs', 'lb-p2': '5/6 legs', 'lb-p3': '4/6 legs',
     'lb-c1': '6/6 legs', 'lb-c2': '5/6 legs', 'lb-c3': '4/6 legs',
-    'k-eyebrow': 'For boards and officers of boat clubs along the route. <a data-view="deltagare">Participant instead?</a>',
-    'k-title': 'Your members make the journey. <em>You make it visible.</em>',
-    'k-sub': 'Svenska Loopen is a route around the whole country that members of affiliated clubs can complete leg by leg. Here\u2019s exactly what affiliating your club involves \u2014 what you get, and what we ask in return.',
-    'k-cta1': 'Affiliate your club',
-    'k-cta2': 'See what it gives the club',
-    'k-stat1': 'cost for the club to join',
-    'k-stat2': 'of the leg fee goes to the member\u2019s club',
-    'k-stat3': 'contact person, no ongoing work',
-    'k-svg-club': 'club', 'k-svg-guld': 'Gold',
-    'ger-h2': 'What you get and what we ask',
-    'ger-p': 'In short: visibility and a small income in exchange for approving your logo and naming a contact.',
-    'ger-gives-h3': 'What the club gets',
-    'ger-gives-li1': 'A share of the leg fee every time one of your members completes a leg \u2014 the money goes straight to your club, not a shared pool.',
-    'ger-gives-li2': 'A physical flag for the clubhouse for every completed leg, with the member\u2019s name and year \u2014 a visible, growing wall of your members\u2019 achievements.',
-    'ger-gives-li3': 'Your club badge on the flag every member carries at sea \u2014 visibility in other harbours along the whole route.',
-    'ger-gives-li4': 'A concrete, recurring reason to engage members beyond regular club activity \u2014 and free PR material for social media and local press.',
-    'ger-asks-h3': 'What we ask',
-    'ger-asks-li1': 'Approval to print your club logo on flags and badges your members earn.',
-    'ger-asks-li2': 'A board contact person for practical questions \u2014 logo, address for the club flag, any membership questions.',
-    'ger-asks-li3': 'That membership in your club counts as valid for anyone signing up to the Loop who names you as their home club.',
-    'ger-asks-li4': 'No financial commitment, no administrative work beyond this \u2014 we handle printing, shipping and dispatch.',
-    'intakt-h2': 'How a leg fee is split',
-    'intakt-p': 'We don\u2019t take a profit \u2014 the fee covers materials, shipping and system costs, plus your share.',
-    'flow1-amt': 'Material', 'flow1-lbl': 'Brass badge, sticker, club flag \u2014 manufacturing',
-    'flow2-amt': 'Shipping', 'flow2-lbl': 'To the member and to the clubhouse',
-    'flow3-amt': 'System', 'flow3-lbl': 'Registration, verification, running the site',
-    'flow4-amt': 'Your share', 'flow4-lbl': 'Goes straight to the member\u2019s home club',
-    'ber-svg-txt': 'your logo',
-    'ber-caption': 'The club flag that ends up in the clubhouse \u2014 one per member, per completed leg.',
-    'ber-h2': 'A wall that grows on its own',
-    'ber-p1': 'Every time a member completes a leg we send a flag to the club \u2014 not just to the member. Over time it becomes a collection that tells the club\u2019s own part of the story, without you having had to do anything more than say yes at the start.',
-    'ber-p2': 'It\u2019s the same principle that gets new members asking what the wall means, and gets existing members wanting to add their own flag next to their neighbour\u2019s.',
-    'faq-h2': 'Frequently asked questions',
-    'faq1-q': 'Does it cost anything to affiliate the club?',
-    'faq1-a': 'No. Affiliating is free. All material is funded by participants\u2019 own fees, not by the club.',
-    'faq2-q': 'Does the club have to be located along the route?',
-    'faq2-a': 'No, any SBU-affiliated club in the country can be a member\u2019s home club, wherever your harbour is.',
-    'faq3-q': 'What if a member isn\u2019t already part of a club?',
-    'faq3-a': 'Anyone signing up without club membership sorts a year\u2019s membership in a club of their own choice as part of signing up \u2014 so you can gain new members that way too.',
-    'faq4-q': 'How is completing a leg actually verified?',
-    'faq4-a': 'Via logbook, GPS track or photos at designated checkpoints \u2014 the same system regardless of which club the member represents.',
-    'anslut-h2': 'Ready to affiliate your club?',
-    'anslut-p': 'We\u2019ll follow up with a simple agreement and ask for your logo \u2014 we handle the rest.',
-    'anslut-btn': 'Contact us about affiliating',
-    'k-footer-p': 'A non-profit initiative in partnership with affiliated boat clubs along the route. Fees cover materials, shipping and a share to your home club \u2014 nothing more.',
-    'k-foot1': 'What you get', 'k-foot2': 'What we ask', 'k-foot3': 'For participants'
   },
   sv: {}
 };
@@ -807,30 +561,7 @@ function setLang(lang){
   document.querySelectorAll('.lang-btn').forEach(function(b){
     b.classList.toggle('active', b.dataset.lang === lang);
   });
-  document.querySelectorAll('[data-view]').forEach(function(el){
-    el.addEventListener2 = true;
-  });
-  attachViewHandlers();
 }
-
-function setView(v){
-  document.getElementById('view-deltagare').style.display = v === 'deltagare' ? '' : 'none';
-  document.getElementById('view-klubbar').style.display = v === 'klubbar' ? '' : 'none';
-  document.querySelectorAll('.toggle-btn').forEach(function(b){
-    b.classList.toggle('active', b.dataset.view === v);
-  });
-  window.scrollTo(0, 0);
-}
-
-function attachViewHandlers(){
-  document.querySelectorAll('[data-view]').forEach(function(el){
-    el.onclick = function(e){
-      e.preventDefault();
-      setView(el.dataset.view);
-    };
-  });
-}
-attachViewHandlers();
 
 function setActiveSeg(n){
   document.querySelectorAll('.route-seg').forEach(function(p){
