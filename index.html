@@ -145,6 +145,7 @@
   .map-label{font-family:'Inter', sans-serif; font-size:9px; fill:#5a6472;}
   .map-caption{margin-top:16px; padding:14px 16px; background:var(--paper-dim); border-radius:6px; border:1px solid var(--line); min-height:64px;}
   .map-caption-hint{font-size:0.85rem; color:#8a9099;}
+  .rutten-note{margin-top:22px; font-size:0.85rem; color:#8a9099; max-width:70ch;}
   .map-caption-name{font-family:'Roboto Slab', serif; font-size:1.05rem; margin-bottom:4px;}
   .map-caption-meta{font-size:0.82rem; color:var(--sea-deep); font-weight:600;}
   .etapp[data-seg]{cursor:pointer; border-radius:8px; padding-right:10px; margin-right:-10px; transition:background-color .2s ease;}
@@ -263,7 +264,7 @@
         <a class="btn-ghost" href="#rutten" id="d-cta2">Se de sex etapperna</a>
       </div>
       <div class="hero-stats">
-        <div><strong>1 300 nm</strong><span id="d-stat1">hela rundan, kust och kanal</span></div>
+        <div><strong>1 200 nm</strong><span id="d-stat1">hela rundan, kust och kanal</span></div>
         <div><strong>6</strong><span id="d-stat2">fristående etapper</span></div>
       </div>
     </div>
@@ -285,32 +286,32 @@
     <div class="etapp-line">
       <div class="etapp" data-seg="1">
         <div class="etapp-name">Norrlandskusten</div>
-        <div class="etapp-meta">Haparanda → Gävle · ca 400 nm</div>
+        <div class="etapp-meta">Haparanda → Gävle · ca 350 nm</div>
         <p class="etapp-desc" id="etapp1-desc">Hela Norrlandskusten, Höga kusten och den norra skärgården. Den mest ensliga och vidsträckta biten av rundan.</p>
       </div>
       <div class="etapp" data-seg="2">
         <div class="etapp-name">Stockholms skärgård</div>
-        <div class="etapp-meta">Gävle → Mem · ca 300 nm · via Stockholms skärgård</div>
+        <div class="etapp-meta">Gävle → Mem · ca 250 nm · via Stockholms skärgård</div>
         <p class="etapp-desc" id="etapp2-desc">Från öppen Bottenhavskust in i landets tätaste skärgård, och vidare ner mot kanalens inlopp.</p>
       </div>
       <div class="etapp" data-seg="3">
         <div class="etapp-name">Göta kanal</div>
-        <div class="etapp-meta">Mem → Göteborg · ca 150 nm · Göta kanal + Trollhätte kanal</div>
+        <div class="etapp-meta">Mem → Göteborg · ca 200 nm · Göta kanal + Trollhätte kanal</div>
         <p class="etapp-desc" id="etapp3-desc">58 slussar, Vänern, och den historiska passagen mellan Östersjön och Kattegatt.</p>
       </div>
       <div class="etapp" data-seg="4">
         <div class="etapp-name">Västkusten</div>
-        <div class="etapp-meta">Göteborg → Båstad · ca 90 nm</div>
+        <div class="etapp-meta">Göteborg → Båstad · ca 75 nm · upp till 250 nm med avstickare mot norska gränsen</div>
         <p class="etapp-desc" id="etapp4-desc">Bohusläns skärgård söderut mot Hallandskusten och gränsen till Skåne.</p>
       </div>
       <div class="etapp" data-seg="5">
         <div class="etapp-name">Skåne runt</div>
-        <div class="etapp-meta">Båstad → Karlskrona · ca 230 nm · Helsingborg–Malmö–Ystad</div>
+        <div class="etapp-meta">Båstad → Karlskrona · ca 150 nm · Helsingborg–Malmö–Ystad</div>
         <p class="etapp-desc" id="etapp5-desc">Öresund, sydkusten och vidare runt till Blekinge — den enda etappen som är en loop i sig själv.</p>
       </div>
       <div class="etapp" data-seg="6">
         <div class="etapp-name">Sydostkusten</div>
-        <div class="etapp-meta">Karlskrona → Mem · ca 100 nm</div>
+        <div class="etapp-meta">Karlskrona → Mem · ca 150 nm</div>
         <p class="etapp-desc" id="etapp6-desc">Blekinge och Smålandskusten hem till startpunkten. Rundan sluts.</p>
       </div>
     </div>
@@ -342,6 +343,7 @@
       </div>
     </div>
     </div>
+    <p class="rutten-note" id="rutten-note">Avstånden är ungefärliga uppskattningar där stopp längs vägen och avstickare i skärgården är medräknade.</p>
   </div>
 </section>
 
@@ -501,6 +503,7 @@ var translations = {
     'rutten-h2': 'The six legs',
     'rutten-p': 'Any order, any pace. Each completed leg earns its own badge.',
     'map-caption-hint': 'Hover over a leg to see it on the map.',
+    'rutten-note': 'Distances are approximate estimates that include stops along the way and detours into the archipelago.',
     'etapp1-desc': 'The entire Norrland coast, the High Coast and the northern archipelago. The most remote and expansive stretch of the loop.',
     'etapp2-desc': 'From the open Bothnian Sea coast into the country\u2019s densest archipelago, then on toward the canal\u2019s entrance.',
     'etapp3-desc': '58 locks, Lake V\u00e4nern, and the historic passage between the Baltic and the Kattegat.',
